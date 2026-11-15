@@ -1,6 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="100" fill="#14532d"/>
-  <rect x="112" y="85" width="288" height="342" rx="24" fill="white"/>
-  <path d="M165 165h182M165 220h182M165 275h182" stroke="#14532d" stroke-width="22" stroke-linecap="round"/>
-  <path d="M165 330h110" stroke="#14532d" stroke-width="22" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bgRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#881313" />
+    </linearGradient>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgRed)" stroke="url(#goldBorder)" stroke-width="16" />
+  <path d="M112 148C112 132.536 124.536 120 140 120H236C247.046 120 256 128.954 256 140V384C256 372.954 247.046 364 236 364H140C124.536 364 112 351.464 112 336V148Z" fill="#ffffff" />
+  <path d="M400 148C400 132.536 387.464 120 372 120H276C264.954 120 256 128.954 256 140V384C256 372.954 264.954 364 276 364H372C387.464 364 400 351.464 400 336V148Z" fill="#fef08a" />
+  <path d="M144 176H224M144 224H224M144 272H208" stroke="#b91c1c" stroke-width="16" stroke-linecap="round" />
+  <path d="M288 176H368M288 224H368M288 272H352" stroke="#991b1b" stroke-width="16" stroke-linecap="round" />
+  <path d="M92 168V364C92 379.464 104.536 392 120 392H232L256 414L280 392H392C407.464 392 420 379.464 420 364V168" fill="none" stroke="#fde047" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
