@@ -1,166 +1,842 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<link rel="manifest" href="./manifest.webmanifest">
-<meta name="theme-color" content="#14532d">
-<link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="./icons/icon-192.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#123b70">
-<title>Sổ tay triển khai Kế hoạch 59/KH-UBND | Cần Thơ</title>
-<style>
-:root{--blue:#123b70;--blue2:#1d5595;--bg:#f3f6fb;--ink:#203047;--muted:#66758a;--line:#e2e8f0;--white:#fff;--gold:#d6a84f}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}
-header{background:linear-gradient(130deg,#0d2c55,#1d5595);color:white;padding:30px 18px 26px}
-.wrap{max-width:1100px;margin:auto;padding:0 18px}
-.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#d9e7f8;font-weight:bold}
-h1{font-size:clamp(26px,5vw,40px);line-height:1.2;margin:9px 0}
-header p{max-width:780px;margin:10px 0 0;color:#e5eef9}
-.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
-.pill{border:1px solid #ffffff55;border-radius:99px;padding:5px 11px;font-size:13px}
-nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-.navinner{max-width:1100px;margin:auto;padding:8px 18px;display:flex;gap:8px;overflow:auto}
-nav a{white-space:nowrap;color:var(--blue);text-decoration:none;font-weight:bold;font-size:14px;padding:8px 11px;border-radius:8px}
-nav a:hover{background:#edf3fa}
-main{max-width:1100px;margin:22px auto;padding:0 18px 50px}
-.notice{background:#fff8e8;border:1px solid #f0d9a6;border-left:5px solid var(--gold);padding:14px 16px;border-radius:10px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}
-.card{background:white;border:1px solid var(--line);border-radius:14px;padding:19px;box-shadow:0 3px 12px #142b4b08}
-.span-12{grid-column:span 12}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
-h2{color:var(--blue);font-size:23px;margin:0 0 12px}
-h3{font-size:17px;margin:0 0 7px;color:#183d68}
-p{margin:7px 0}.muted{color:var(--muted)}.stat{font-size:27px;font-weight:bold;color:var(--blue)}
-ul{padding-left:21px;margin:8px 0}li{margin:5px 0}
-.searchrow{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
-input,select{font:inherit;border:1px solid #cbd5e1;border-radius:9px;padding:11px 12px;background:white}
-input{flex:1;min-width:220px}
-button{border:0;background:var(--blue);color:white;border-radius:9px;padding:11px 15px;font-weight:bold;cursor:pointer}
-button:hover{background:var(--blue2)}
-details{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:9px 0;background:#fff}
-summary{cursor:pointer;font-weight:bold;color:#183d68}
-.tag{display:inline-block;background:#edf3fa;color:#174477;border-radius:6px;padding:2px 7px;font-size:12px;margin:3px 4px 0 0}
-.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px}
-th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{background:#edf3fa;color:#163d6c}
-footer{text-align:center;color:var(--muted);padding:25px 15px;font-size:13px}
-.small{font-size:13px}.hide{display:none}
-@media(max-width:720px){.span-6,.span-4{grid-column:span 12}.card{padding:16px}header{padding-top:24px}}
-@media print{nav,.searchrow,button{display:none!important}body{background:white}.card{box-shadow:none;break-inside:avoid}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sổ tay điện tử Cần Thơ | Kế hoạch 59/KH-UBND</title>
+  <meta name="description" content="Sổ tay điện tử triển khai Kế hoạch số 59/KH-UBND ngày 04/02/2026 của UBND thành phố Cần Thơ giai đoạn 2026–2030.">
+  <meta name="theme-color" content="#b91c1c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sổ tay Cần Thơ">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <style>
+    :root {
+      --red-dark: #881313;
+      --red: #b91c1c;
+      --red-light: #dc2626;
+      --red-soft: #fef2f2;
+      --gold: #eab308;
+      --gold-dark: #b45309;
+      --gold-soft: #fffbeb;
+      --bg: #f8f6f2;
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --line: #e5e0d8;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.6 "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* =========================================================
+       GIAI ĐOẠN 1: MÀN HÌNH LOGO MỞ ĐẦU (SPLASH SCREEN)
+       ========================================================= */
+    #splash-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: radial-gradient(circle at 50% 35%, #dc2626 0%, #991b1b 55%, #680d0d 100%);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      overflow: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #splash-screen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .splash-glow {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(250, 204, 21, 0.22) 0%, rgba(250, 204, 21, 0) 70%);
+      pointer-events: none;
+    }
+    .splash-content {
+      position: relative;
+      z-index: 2;
+      max-width: 540px;
+      animation: zoomFadeIn 0.75s ease-out;
+    }
+    .book-emblem {
+      width: 108px;
+      height: 108px;
+      margin: 0 auto 20px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #ef4444, #991b1b);
+      border: 2.5px solid #fde047;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35), inset 0 0 18px rgba(253, 224, 71, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .splash-title {
+      font-size: clamp(24px, 5vw, 34px);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin: 0;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    .splash-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 12px auto 8px;
+      font-size: clamp(16px, 3.2vw, 20px);
+      font-weight: 700;
+      color: #fef08a;
+      letter-spacing: 0.03em;
+    }
+    .splash-divider::before,
+    .splash-divider::after {
+      content: "";
+      height: 1.5px;
+      width: 42px;
+      background: linear-gradient(90deg, transparent, #fde047, transparent);
+    }
+    .splash-period {
+      font-size: 16px;
+      color: #fee2e2;
+      font-weight: 600;
+      margin: 0 0 28px;
+    }
+    .spinner {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 10px;
+      border: 3.5px solid rgba(255, 255, 255, 0.25);
+      border-top-color: #fde047;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    .splash-loading-text {
+      font-size: 14px;
+      font-style: italic;
+      color: #fef9c3;
+      opacity: 0.92;
+    }
+    .splash-skyline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0.24;
+      pointer-events: none;
+    }
+
+    /* =========================================================
+       GIAI ĐOẠN 2: TRANG LỜI NGỎ (INTRO SCREEN)
+       ========================================================= */
+    #intro-screen {
+      min-height: 100vh;
+      display: none;
+      flex-direction: column;
+      background: linear-gradient(180deg, #fdfbf7 0%, #f5efe6 100%);
+      animation: fadeIn 0.5s ease;
+    }
+    #intro-screen.active {
+      display: flex;
+    }
+    .intro-topbar {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: var(--white);
+      padding: 14px 20px;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 3px 12px rgba(136, 19, 19, 0.2);
+    }
+    .intro-topbar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .intro-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: clamp(15px, 3vw, 19px);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .intro-brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1.5px solid #fde047;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .intro-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 16px 40px;
+    }
+    .intro-card {
+      width: 100%;
+      max-width: 820px;
+      background: var(--white);
+      border: 1px solid #eadfce;
+      border-top: 5px solid var(--red);
+      border-radius: 18px;
+      padding: clamp(22px, 4vw, 38px);
+      box-shadow: 0 12px 32px rgba(136, 19, 19, 0.08);
+    }
+    .intro-heading {
+      text-align: center;
+      color: var(--red);
+      font-size: clamp(24px, 4.5vw, 32px);
+      font-weight: 800;
+      margin: 0 0 6px;
+      letter-spacing: 0.04em;
+    }
+    .star-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--gold);
+      font-size: 18px;
+    }
+    .star-divider::before,
+    .star-divider::after {
+      content: "";
+      width: 64px;
+      height: 1.5px;
+      background: #e5d3b3;
+    }
+    .intro-salutation {
+      font-weight: 700;
+      font-style: italic;
+      color: #111827;
+      font-size: 17px;
+      margin-bottom: 14px;
+    }
+    .intro-text p {
+      margin: 0 0 14px;
+      text-align: justify;
+      font-size: 16px;
+      line-height: 1.72;
+      color: #1f2937;
+    }
+    .intro-meta-box {
+      background: var(--gold-soft);
+      border: 1px solid #fde68a;
+      border-left: 4px solid var(--gold-dark);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 16px 0 22px;
+      font-size: 14.5px;
+      color: #78350f;
+    }
+    .btn-start-wrap {
+      text-align: center;
+      margin-top: 24px;
+    }
+    .btn-start {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: var(--white);
+      border: 2px solid #fde047;
+      border-radius: 12px;
+      padding: 15px 32px;
+      font-size: clamp(16px, 3vw, 18px);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(185, 28, 28, 0.28);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+    .btn-start:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--red-light), var(--red));
+      box-shadow: 0 12px 26px rgba(185, 28, 28, 0.36);
+    }
+    .btn-start:active {
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       GIAI ĐOẠN 3: WEBSITE CHÍNH (BẢO TOÀN DỮ LIỆU & CHỨC NĂNG)
+       ========================================================= */
+    #main-app {
+      display: none;
+      animation: fadeIn 0.45s ease;
+    }
+    #main-app.active {
+      display: block;
+    }
+    header {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      color: var(--white);
+      padding: 28px 18px 24px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .wrap { max-width: 1100px; margin: auto; padding: 0 18px; }
+    .kicker {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fde047;
+      font-weight: bold;
+    }
+    h1 { font-size: clamp(25px, 4.8vw, 38px); line-height: 1.22; margin: 8px 0; }
+    header p { max-width: 800px; margin: 10px 0 0; color: #fef2f2; }
+    .meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+    .pill {
+      border: 1px solid rgba(253, 224, 71, 0.55);
+      background: rgba(0, 0, 0, 0.14);
+      color: #fef9c3;
+      border-radius: 99px;
+      padding: 5px 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .navinner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 8px 18px;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    nav a, .nav-btn-intro {
+      white-space: nowrap;
+      color: var(--red-dark);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    nav a:hover, .nav-btn-intro:hover {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+    .nav-btn-intro {
+      border: 1px solid #fecaca;
+      background: #fff8f8;
+    }
+    main { max-width: 1100px; margin: 22px auto; padding: 0 18px 50px; }
+    .notice {
+      background: var(--gold-soft);
+      border: 1px solid #fde68a;
+      border-left: 5px solid var(--gold);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      color: #78350f;
+    }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 15px; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 19px;
+      box-shadow: 0 3px 12px rgba(136, 19, 19, 0.04);
+    }
+    .span-12 { grid-column: span 12; }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    h2 { color: var(--red); font-size: 22px; margin: 0 0 12px; }
+    h3 { font-size: 17px; margin: 0 0 7px; color: var(--red-dark); }
+    p { margin: 7px 0; }
+    .muted { color: var(--muted); }
+    .stat { font-size: 27px; font-weight: bold; color: var(--red); }
+    ul { padding-left: 21px; margin: 8px 0; }
+    li { margin: 5px 0; }
+    .searchrow { display: flex; gap: 9px; flex-wrap: wrap; margin: 12px 0; }
+    input, select {
+      font: inherit;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      padding: 11px 12px;
+      background: var(--white);
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+    }
+    input { flex: 1; min-width: 220px; }
+    .btn-clear {
+      border: 0;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 9px;
+      padding: 11px 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-clear:hover { background: var(--red-dark); }
+    details {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 9px 0;
+      background: var(--white);
+    }
+    details[open] { border-color: #fca5a5; }
+    summary { cursor: pointer; font-weight: bold; color: var(--red-dark); }
+    .tablewrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 14px; }
+    th, td { padding: 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--red-soft); color: var(--red-dark); }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 25px 15px;
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      background: var(--white);
+    }
+    .small { font-size: 13px; }
+    .hide { display: none !important; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes zoomFadeIn {
+      from { opacity: 0; transform: scale(0.94) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 720px) {
+      .span-6, .span-4 { grid-column: span 12; }
+      .card { padding: 16px; }
+      header { padding-top: 22px; }
+      .btn-start { width: 100%; padding: 14px 18px; }
+    }
+    @media print {
+      #splash-screen, #intro-screen, nav, .searchrow, button { display: none !important; }
+      #main-app { display: block !important; }
+      body { background: white; }
+      .card { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<div class="wrap">
-<div class="kicker">Ủy ban nhân dân thành phố Cần Thơ</div>
-<h1>SỔ TAY TRIỂN KHAI KẾ HOẠCH 59/KH-UBND</h1>
-<p>Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ.</p>
-<div class="meta"><span class="pill">Số: 59/KH-UBND</span><span class="pill">Ngày 04/02/2026</span><span class="pill">Giai đoạn 2026–2030</span></div>
-</div>
-</header>
-<nav><div class="navinner">
-<a href="#tongquan">Tổng quan</a><a href="#muctieu">Mục đích</a><a href="#giaiphap">Giải pháp</a><a href="#nhiemvu">Phụ lục nhiệm vụ</a><a href="#chitieu">Chỉ tiêu</a><a href="#tochuc">Tổ chức thực hiện</a>
-<a href="tai-ve/">Tải về</a></div></nav>
-<main>
-<div class="notice"><b>Lưu ý về căn cứ:</b> Website này được biên soạn từ file <i>59_KH-UBND_694193.docx</i> do người dùng cung cấp. Đây là Kế hoạch số 59/KH-UBND của UBND thành phố Cần Thơ về đăng ký và thống kê hộ tịch, không phải Kế hoạch 59-KH/ĐU về kiểm điểm, xếp loại của Đảng bộ xã Nhu Gia.</div>
-<section id="tongquan" class="grid">
-<div class="card span-4"><div class="muted small">Số nhiệm vụ trong phụ lục</div><div class="stat">52</div><div class="muted small">Đánh số từ 01 đến 52</div></div>
-<div class="card span-4"><div class="muted small">Thời gian thực hiện</div><div class="stat">2026–2030</div><div class="muted small">Theo các mốc ghi tại phụ lục</div></div>
-<div class="card span-4"><div class="muted small">Cơ quan đầu mối tham mưu, theo dõi</div><div class="stat">Sở Tư pháp</div><div class="muted small">Theo nội dung tổ chức thực hiện</div></div>
-<div class="card span-12"><h2>Thông tin văn bản</h2>
-<p><b>Tên văn bản:</b> Kế hoạch triển khai thực hiện Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ.</p>
-<p><b>Cơ quan ban hành:</b> Ủy ban nhân dân thành phố Cần Thơ.</p>
-<p><b>Căn cứ được nêu:</b> Quyết định số 2836/QĐ-TTg ngày 31/12/2025 của Thủ tướng Chính phủ phê duyệt Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030.</p>
-</div></section>
-<section id="muctieu" class="card" style="margin-top:15px">
-<h2>I. Mục đích, yêu cầu</h2>
-<ul>
-<li>Triển khai hiệu quả Chương trình hành động quốc gia; bảo đảm các sự kiện hộ tịch được đăng ký kịp thời, đầy đủ, chính xác, đúng quy định pháp luật.</li>
-<li>Nâng cao tỷ lệ đăng ký hộ tịch, tập trung vào đăng ký khai sinh và khai tử đúng hạn; bảo đảm quyền đăng ký hộ tịch của nhóm yếu thế, vùng sâu, vùng xa.</li>
-<li>Hướng đến việc tất cả sự kiện hộ tịch được đăng ký, quản lý trên môi trường điện tử; dữ liệu hộ tịch điện tử đầy đủ, chính xác, thống nhất và cập nhật kịp thời.</li>
-<li>Thiết lập hồ sơ hộ tịch điện tử cá nhân; đẩy mạnh tuyên truyền về giấy tờ, dữ liệu điện tử, đăng ký trực tuyến, số định danh cá nhân và định danh điện tử quốc gia.</li>
-<li>Tăng cường quản lý nhà nước và phối hợp đồng bộ giữa các ngành, cơ quan, UBND cấp xã.</li>
-</ul></section>
-<section id="giaiphap" class="card" style="margin-top:15px">
-<h2>III. Giải pháp thực hiện</h2>
-<div class="grid">
-<div class="span-6"><h3>1. Lãnh đạo, chỉ đạo và kiểm tra</h3><p>Tăng cường chỉ đạo; xây dựng kế hoạch hằng năm; thường xuyên kiểm tra, giám sát, đánh giá và tháo gỡ vướng mắc.</p></div>
-<div class="span-6"><h3>2. Đào tạo, bồi dưỡng</h3><p>Nâng cao chuyên môn nghiệp vụ và kỹ năng ứng dụng công nghệ thông tin cho đội ngũ làm công tác hộ tịch.</p></div>
-<div class="span-6"><h3>3. Tuyên truyền, phổ biến</h3><p>Tuyên truyền đa phương tiện về quyền, trách nhiệm và ý nghĩa của đăng ký, thống kê hộ tịch; hướng dẫn sử dụng dịch vụ công trực tuyến.</p></div>
-<div class="span-6"><h3>4. Bảo đảm kinh phí</h3><p>Bố trí ngân sách và huy động tài trợ, viện trợ cùng các nguồn hợp pháp khác để thực hiện kế hoạch.</p></div>
-</div></section>
-<section id="nhiemvu" class="card" style="margin-top:15px">
-<h2>Phụ lục – Danh mục nhiệm vụ</h2>
-<p class="muted">Tra cứu nhiệm vụ theo từ khóa, số thứ tự hoặc cơ quan. Nội dung dưới đây tóm lược các nhóm nhiệm vụ và các đầu việc được thể hiện trong phụ lục văn bản.</p>
-<div class="searchrow"><input id="q" placeholder="Tìm: khai sinh, Sở Tư pháp, tuyên truyền..." oninput="filterTasks()"><button onclick="document.getElementById('q').value='';filterTasks()">Xóa tìm kiếm</button></div>
-<div id="tasks">
-<details class="task"><summary>I. Xây dựng kế hoạch, phối hợp liên ngành và kiểm tra (nhiệm vụ 01–04)</summary>
-<ul><li>01. Xây dựng kế hoạch triển khai Chương trình hành động quốc gia giai đoạn 2026–2030. Chủ trì: Sở Tư pháp. Thời gian: tháng 02/2026.</li><li>02. Ký kết Quy chế phối hợp liên ngành về khai thác, sử dụng số liệu thống kê hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li><li>03. Phối hợp góp ý văn bản quy phạm pháp luật chuyên ngành liên quan đến đăng ký và thống kê hộ tịch. Thời gian: theo yêu cầu của cơ quan cấp trên.</li><li>04. Kiểm tra liên ngành về công tác đăng ký và thống kê hộ tịch. Thời gian: hằng năm hoặc đột xuất.</li></ul></details>
-<details class="task"><summary>II. Cơ sở vật chất và hiện đại hóa (nhiệm vụ 05–06)</summary>
-<ul><li>05. Trang bị máy tính, internet, máy in phục vụ công tác đăng ký hộ tịch; rà soát, nâng cấp thiết bị. Chủ trì: Sở Tài chính, Sở Khoa học và Công nghệ. Thời gian: năm 2026.</li><li>06. Tăng cường cơ sở vật chất, kỹ thuật và ứng dụng CNTT tại cơ sở y tế để kết nối, chia sẻ thông tin sinh, tử. Chủ trì: Sở Tài chính, Sở Khoa học và Công nghệ. Thời gian: năm 2026.</li></ul></details>
-<details class="task"><summary>III. Nâng cao năng lực đội ngũ (nhiệm vụ 07–09)</summary>
-<ul><li>07. Rà soát đội ngũ công chức làm công tác đăng ký, thống kê hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li><li>08. Bố trí đủ công chức hộ tịch; rà soát, đào tạo, bồi dưỡng nghiệp vụ, kỹ năng bổ trợ và thái độ phục vụ. Chủ trì: UBND cấp xã. Thời gian: năm 2026.</li><li>09. Góp ý và đề xuất quy trình đăng ký hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li></ul></details>
-<details class="task"><summary>IV. Nâng cao nhận thức và tuyên truyền (nhiệm vụ 10–13)</summary>
-<ul><li>10. Xây dựng kế hoạch tuyên truyền có trọng tâm, trọng điểm; biên soạn tài liệu. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li><li>11. Tổ chức tuyên truyền về quyền, nghĩa vụ đăng ký hộ tịch, dịch vụ công trực tuyến và đăng ký đúng hạn. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li><li>12. Nâng cao nhận thức của cơ quan, tổ chức qua họp, sinh hoạt và chuyên đề truyền thông; khảo sát, đánh giá. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li><li>13. Đào tạo ngắn hạn cho nhân viên y tế về giấy chứng sinh, giấy báo tử và dữ liệu sinh, tử. Chủ trì: Sở Y tế. Thời gian: hằng năm.</li></ul></details>
-<details class="task"><summary>V. Thu thập và công bố số liệu (nhiệm vụ 14–15)</summary>
-<ul><li>14. Thống kê tỷ lệ đăng ký khai sinh, khai tử hằng năm. Chủ trì: UBND cấp xã. Thời gian: báo cáo định kỳ.</li><li>15. Công bố công khai số liệu thống kê hộ tịch đầy đủ, chính xác, thống nhất, kịp thời. Thời gian: từ năm 2026.</li></ul></details>
-<details class="task"><summary>VI. Đăng ký khai sinh (nhiệm vụ 16–24)</summary>
-<ul><li>16–17. Đến năm 2028: tỷ lệ đăng ký khai sinh đúng hạn đạt 95%; tỷ lệ đăng ký trong vòng 1 năm kể từ ngày sinh đạt 98%.</li><li>18. Trẻ sinh tại cơ sở y tế được cấp giấy chứng sinh đạt 100%; dữ liệu cập nhật đúng hạn và tạo lập bản điện tử giấy chứng sinh đạt 95% đến năm 2028.</li><li>19. Tạo lập bản điện tử giấy khai sinh đối với trường hợp đăng ký từ 01/01/2016 đến thời điểm triển khai phần mềm đạt 100% đến năm 2028.</li><li>20–21. Rà soát, vận động người chưa có giấy khai sinh/dữ liệu khai sinh; bảo đảm ít nhất 80% nhóm dân cư yếu thế được đăng ký khai sinh trong vòng 1 năm kể từ thời điểm thống kê.</li><li>22–23. Đến năm 2030: tỷ lệ khai sinh đúng hạn đạt 98,5%; đăng ký trong vòng 1 năm kể từ ngày sinh đạt 99%.</li><li>24. Đến năm 2030, tạo lập bản điện tử giấy khai sinh cho toàn bộ công dân Việt Nam còn sống thuộc nhóm thời gian nêu trong kế hoạch, bảo đảm 100% công dân còn sống có giấy khai sinh hợp lệ.</li></ul></details>
-<details class="task"><summary>VII. Đăng ký khai tử (nhiệm vụ 25–28)</summary>
-<ul><li>25–26. Đến năm 2028: tỷ lệ đăng ký khai tử đúng hạn đạt 85%; đăng ký trong vòng 1 năm kể từ ngày chết đạt 90%.</li><li>27–28. Đến năm 2030: tỷ lệ đăng ký khai tử đúng hạn đạt 90%; đăng ký trong vòng 1 năm kể từ ngày chết đạt 95%.</li></ul></details>
-<details class="task"><summary>VIII. Giấy báo tử và xác định nguyên nhân tử vong (nhiệm vụ 29–34)</summary>
-<ul><li>29–31. Đến năm 2028: giấy báo tử điện tử tại cơ sở y tế được tạo lập, cập nhật đúng hạn đạt 80%; ít nhất 75% trường hợp chết tại cơ sở y tế được chứng nhận nguyên nhân tử vong theo tiêu chuẩn quốc tế; ghi nhận nguyên nhân tử vong ngoài cơ sở y tế đạt 80%.</li><li>32–34. Đến năm 2030: giấy báo tử điện tử đạt 90%; ít nhất 80% trường hợp chết tại cơ sở y tế được chứng nhận nguyên nhân tử vong theo tiêu chuẩn quốc tế; ghi nhận nguyên nhân tử vong ngoài cơ sở y tế đạt 90%.</li></ul></details>
-<details class="task"><summary>IX. Giảm tỷ lệ tảo hôn (nhiệm vụ 35–36)</summary>
-<ul><li>35. Đến năm 2028, rà soát, thống kê đầy đủ các trường hợp tảo hôn phát sinh hằng năm trên địa bàn.</li><li>36. Đến năm 2030, số trường hợp tảo hôn được rà soát, thống kê giảm ít nhất 30% so với giai đoạn 2026–2028.</li></ul></details>
-<details class="task"><summary>X. Cập nhật tình trạng hôn nhân khi ly hôn (nhiệm vụ 37–40)</summary>
-<ul><li>37–38. Đến năm 2028, đồng bộ dữ liệu ly hôn từ 01/01/2026; rà soát, đối chiếu và cập nhật dữ liệu ly hôn trước 31/12/2025 đủ điều kiện đồng bộ, đạt 85%.</li><li>39–40. Đến năm 2030, dữ liệu ly hôn từ 01/01/2026 được đồng bộ theo thời gian thực; rà soát, cập nhật dữ liệu trước 31/12/2025 đủ điều kiện đồng bộ, đạt 95%.</li></ul></details>
-<details class="task"><summary>XI. Thống kê và công bố số liệu (nhiệm vụ 41–42)</summary>
-<ul><li>41. Bảo đảm dữ liệu đăng ký hộ tịch được tổng hợp, thống kê, công bố, phổ biến theo chỉ tiêu thống kê và chế độ báo cáo ngành Tư pháp. Thời gian: định kỳ hằng năm.</li><li>42. Cập nhật số liệu đăng ký hộ tịch theo tiêu chí quản lý, điều hành cơ bản trên Trung tâm điều hành thông minh thành phố. Thời gian: định kỳ hằng năm.</li></ul></details>
-<details class="task"><summary>XII. Tuyên truyền và củng cố niềm tin xã hội (nhiệm vụ 43–52)</summary>
-<ul><li>43. Đến năm 2030, ít nhất 90% người trưởng thành biết và hiểu cơ bản quyền, nghĩa vụ đăng ký sự kiện hộ tịch thiết yếu.</li><li>44. Tăng mức độ nhận thức về hộ tịch điện tử; tỷ lệ người chủ động đăng ký qua dịch vụ công trực tuyến tăng tối thiểu 50% so với năm 2025.</li><li>45. Đến năm 2028, 100% công chức hộ tịch cơ sở được tập huấn kỹ năng tuyên truyền, tư vấn, hướng dẫn đăng ký hộ tịch điện tử.</li><li>46. Đến năm 2030, ít nhất 90% cán bộ y tế, công an, bảo hiểm xã hội, thống kê… hiểu và phối hợp hiệu quả.</li><li>47. Đến năm 2030, phối hợp triển khai ít nhất 03 cuộc tuyên truyền liên ngành và 05 chiến dịch quy mô toàn quốc với cơ quan Trung ương.</li><li>48–49. Duy trì kế hoạch tuyên truyền; phấn đấu ít nhất 70% người dân tiếp cận thông tin hộ tịch qua truyền thông, cổng dịch vụ công và nền tảng số khác.</li><li>50–52. Củng cố hình ảnh, niềm tin, đồng thuận xã hội; tăng cường minh bạch, truyền thông cộng đồng và chia sẻ điển hình tiên tiến.</li></ul></details>
-</div>
-</section>
-<section id="chitieu" class="card" style="margin-top:15px">
-<h2>Một số chỉ tiêu định lượng đáng chú ý</h2>
-<div class="tablewrap"><table><thead><tr><th>Nội dung</th><th>Đến năm 2028</th><th>Đến năm 2030</th></tr></thead><tbody>
-<tr><td>Đăng ký khai sinh đúng hạn</td><td>95%</td><td>98,5%</td></tr>
-<tr><td>Đăng ký khai sinh trong vòng 1 năm kể từ ngày sinh</td><td>98%</td><td>99%</td></tr>
-<tr><td>Đăng ký khai tử đúng hạn</td><td>85%</td><td>90%</td></tr>
-<tr><td>Đăng ký khai tử trong vòng 1 năm kể từ ngày chết</td><td>90%</td><td>95%</td></tr>
-<tr><td>Giấy báo tử điện tử tại cơ sở y tế, cập nhật đúng hạn</td><td>80%</td><td>90%</td></tr>
-<tr><td>Người trưởng thành hiểu cơ bản quyền, nghĩa vụ đăng ký hộ tịch</td><td>—</td><td>Ít nhất 90%</td></tr>
-</tbody></table></div>
-<p class="small muted">Bảng chỉ chọn một số chỉ tiêu tiêu biểu trong phụ lục; xem văn bản gốc để đối chiếu đầy đủ từng nhiệm vụ và điều kiện.</p>
-</section>
-<section id="tochuc" class="card" style="margin-top:15px">
-<h2>V. Tổ chức thực hiện</h2>
-<ul>
-<li>Các sở, ban, ngành thành phố và UBND cấp xã chủ động triển khai trong phạm vi chức năng, nhiệm vụ được phân công.</li>
-<li>Sở Tài chính chủ trì, tổng hợp kinh phí thực hiện kế hoạch, trình UBND thành phố phê duyệt.</li>
-<li>UBND cấp xã tổ chức thực hiện kế hoạch; lồng ghép với chương trình, kế hoạch phát triển kinh tế – xã hội; khảo sát, thống kê tỷ lệ đăng ký khai sinh, khai tử định kỳ hoặc đột xuất theo yêu cầu.</li>
-<li>Sở Tư pháp tham mưu theo dõi, đôn đốc, kiểm tra; tổng hợp khó khăn, vướng mắc; phối hợp triển khai, sơ kết, tổng kết và báo cáo Chủ tịch UBND thành phố.</li>
-</ul>
-<h3>IV. Kinh phí</h3><p>Kinh phí từ ngân sách nhà nước; tài trợ, viện trợ của tổ chức, cá nhân trong và ngoài nước; và các nguồn hợp pháp khác. Các cơ quan liên quan xây dựng dự toán theo nhiệm vụ được giao.</p>
-</section>
-<div class="notice" style="margin-top:16px"><b>Khuyến nghị sử dụng:</b> Đây là công cụ tra cứu, tóm lược để thuận tiện theo dõi. Khi thực hiện nhiệm vụ, cần đối chiếu toàn văn Kế hoạch số 59/KH-UBND và các văn bản hướng dẫn có liên quan. Nội dung website không thay thế văn bản chính thức.</div>
-</main>
-<footer>Website tra cứu nội dung Kế hoạch số 59/KH-UBND ngày 04/02/2026 · UBND thành phố Cần Thơ</footer>
-<script>
-function filterTasks(){
- const q=document.getElementById('q').value.toLocaleLowerCase('vi');
- document.querySelectorAll('#tasks details').forEach(d=>{
-   d.classList.toggle('hide',!d.innerText.toLocaleLowerCase('vi').includes(q));
-   if(q && d.innerText.toLocaleLowerCase('vi').includes(q)) d.open=true;
- });
-}
-</script>
+
+  <!-- =========================================================
+       GIAI ĐOẠN 1: MÀN HÌNH LOGO MỞ ĐẦU
+       ========================================================= -->
+  <section id="splash-screen" aria-label="Màn hình khởi động Sổ tay điện tử Cần Thơ" onclick="goToIntro()">
+    <div class="splash-glow"></div>
+    <div class="splash-content">
+      <div class="book-emblem" aria-hidden="true">
+        <svg width="62" height="62" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 14C10 11.7909 11.7909 10 14 10H29C30.6569 10 32 11.3431 32 13V52C32 50.3431 30.6569 49 29 49H14C11.7909 49 10 47.2091 10 45V14Z" fill="#FFFFFF"/>
+          <path d="M54 14C54 11.7909 52.2091 10 50 10H35C33.3431 10 32 11.3431 32 13V52C32 50.3431 33.3431 49 35 49H50C52.2091 49 54 47.2091 54 45V14Z" fill="#FEF08A"/>
+          <path d="M15 19H26M15 26H26M15 33H24" stroke="#B91C1C" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M38 19H49M38 26H49M38 33H47" stroke="#991B1B" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M7 17V49C7 51.2091 8.79086 53 11 53H28.5L32 56L35.5 53H53C55.2091 53 57 51.2091 57 49V17" stroke="#FDE047" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="splash-title">SỔ TAY ĐIỆN TỬ CẦN THƠ</h2>
+      <div class="splash-divider">KẾ HOẠCH 59/KH-UBND</div>
+      <p class="splash-period">Giai đoạn 2026–2030</p>
+      <div class="spinner" aria-hidden="true"></div>
+      <div class="splash-loading-text">Đang tải ứng dụng...</div>
+    </div>
+    <svg class="splash-skyline" viewBox="0 0 1200 180" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 160 L120 160 L120 110 L165 110 L165 160 L210 160 L210 85 L270 85 L270 160 L330 160 L330 120 L390 120 L390 160 L520 160 L560 35 L600 160 L740 160 L780 35 L820 160 L960 160 L960 100 L1030 100 L1030 160 L1200 160 L1200 180 L0 180 Z" fill="#FDE047"/>
+      <path d="M410 155 Q560 95 670 135 Q780 95 930 155" stroke="#FEF08A" stroke-width="3" fill="none"/>
+    </svg>
+  </section>
+
+  <!-- =========================================================
+       GIAI ĐOẠN 2: TRANG LỜI NGỎ
+       ========================================================= -->
+  <section id="intro-screen" aria-label="Trang Lời ngỏ">
+    <div class="intro-topbar">
+      <div class="intro-topbar-inner">
+        <div class="intro-brand">
+          <div class="intro-brand-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 64 64" fill="none">
+              <path d="M10 14C10 11.7909 11.7909 10 14 10H29C30.6569 10 32 11.3431 32 13V52C32 50.3431 30.6569 49 29 49H14C11.7909 49 10 47.2091 10 45V14Z" fill="#FFFFFF"/>
+              <path d="M54 14C54 11.7909 52.2091 10 50 10H35C33.3431 10 32 11.3431 32 13V52C32 50.3431 33.3431 49 35 49H50C52.2091 49 54 47.2091 54 45V14Z" fill="#FEF08A"/>
+            </svg>
+          </div>
+          <span>SỔ TAY ĐIỆN TỬ CẦN THƠ</span>
+        </div>
+        <span style="font-size:13px; color:#fef08a; font-weight:600;">Kế hoạch 59/KH-UBND</span>
+      </div>
+    </div>
+
+    <div class="intro-body">
+      <div class="intro-card">
+        <h2 class="intro-heading">LỜI NGỎ</h2>
+        <div class="star-divider" aria-hidden="true">★</div>
+
+        <div class="intro-salutation">
+          Kính gửi các cơ quan, đơn vị, Ủy ban nhân dân cấp xã và đội ngũ cán bộ, công chức, viên chức trên địa bàn thành phố Cần Thơ!
+        </div>
+
+        <div class="intro-text">
+          <p>
+            <strong>Sổ tay điện tử Cần Thơ</strong> được xây dựng nhằm phục vụ công tác tra cứu, theo dõi và triển khai thực hiện <strong>Kế hoạch số 59/KH-UBND ngày 04/02/2026 của Ủy ban nhân dân thành phố Cần Thơ</strong> về triển khai thực hiện Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ (căn cứ Quyết định số 2836/QĐ-TTg ngày 31/12/2025 của Thủ tướng Chính phủ).
+          </p>
+          <p>
+            Với mục tiêu góp phần bảo đảm các sự kiện hộ tịch được đăng ký kịp thời, đầy đủ, chính xác, đúng quy định pháp luật và từng bước hiện đại hóa công tác đăng ký, quản lý hộ tịch trên môi trường điện tử, Sổ tay điện tử hệ thống hóa trực quan các nội dung trọng tâm của Kế hoạch gồm: mục đích, yêu cầu; các nhóm giải pháp thực hiện; danh mục 52 nhiệm vụ theo phụ lục; các chỉ tiêu định lượng đến năm 2028 và năm 2030; phân công tổ chức thực hiện cùng kho văn bản gốc để thuận tiện tải về sử dụng.
+          </p>
+          <p>
+            Rất mong các cơ quan, đơn vị và đội ngũ cán bộ, công chức, viên chức khai thác, sử dụng hiệu quả công cụ này trong quá trình tham mưu, tổ chức thực hiện nhiệm vụ tại địa phương, đơn vị.
+          </p>
+        </div>
+
+        <div class="intro-meta-box">
+          <strong>Lưu ý căn cứ pháp lý:</strong> Nội dung trong Sổ tay điện tử được tổng hợp, hệ thống hóa từ Kế hoạch số 59/KH-UBND ngày 04/02/2026 của UBND thành phố Cần Thơ nhằm hỗ trợ tra cứu nhanh; khi áp dụng giải quyết nghiệp vụ, đề nghị đối chiếu trực tiếp toàn văn văn bản chính thức.
+        </div>
+
+        <div class="btn-start-wrap">
+          <button type="button" class="btn-start" onclick="startMainApp()">
+            <span>▶ BẮT ĐẦU SỬ DỤNG CÔNG CỤ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       GIAI ĐOẠN 3: WEBSITE CHÍNH (GIỮ NGUYÊN TOÀN BỘ DỮ LIỆU GỐC)
+       ========================================================= -->
+  <div id="main-app">
+    <header>
+      <div class="wrap">
+        <div class="kicker">Ủy ban nhân dân thành phố Cần Thơ</div>
+        <h1>SỔ TAY TRIỂN KHAI KẾ HOẠCH 59/KH-UBND</h1>
+        <p>Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ.</p>
+        <div class="meta">
+          <span class="pill">Số: 59/KH-UBND</span>
+          <span class="pill">Ngày 04/02/2026</span>
+          <span class="pill">Giai đoạn 2026–2030</span>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <div class="navinner">
+        <button type="button" class="nav-btn-intro" onclick="showIntroAgain()">Lời ngỏ</button>
+        <a href="#tongquan">Tổng quan</a>
+        <a href="#muctieu">Mục đích</a>
+        <a href="#giaiphap">Giải pháp</a>
+        <a href="#nhiemvu">Phụ lục nhiệm vụ</a>
+        <a href="#chitieu">Chỉ tiêu</a>
+        <a href="#tochuc">Tổ chức thực hiện</a>
+        <a href="tai-ve/">Tải về</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="notice">
+        <b>Lưu ý về căn cứ:</b> Website này được biên soạn từ văn bản gốc Kế hoạch số 59/KH-UBND ngày 04/02/2026 của Ủy ban nhân dân thành phố Cần Thơ về triển khai thực hiện Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ.
+      </div>
+
+      <section id="tongquan" class="grid">
+        <div class="card span-4">
+          <div class="muted small">Số nhiệm vụ trong phụ lục</div>
+          <div class="stat">52</div>
+          <div class="muted small">Đánh số từ 01 đến 52</div>
+        </div>
+        <div class="card span-4">
+          <div class="muted small">Thời gian thực hiện</div>
+          <div class="stat">2026–2030</div>
+          <div class="muted small">Theo các mốc ghi tại phụ lục</div>
+        </div>
+        <div class="card span-4">
+          <div class="muted small">Cơ quan đầu mối tham mưu, theo dõi</div>
+          <div class="stat">Sở Tư pháp</div>
+          <div class="muted small">Theo nội dung tổ chức thực hiện</div>
+        </div>
+        <div class="card span-12">
+          <h2>Thông tin văn bản</h2>
+          <p><b>Tên văn bản:</b> Kế hoạch triển khai thực hiện Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ.</p>
+          <p><b>Cơ quan ban hành:</b> Ủy ban nhân dân thành phố Cần Thơ.</p>
+          <p><b>Căn cứ được nêu:</b> Quyết định số 2836/QĐ-TTg ngày 31/12/2025 của Thủ tướng Chính phủ phê duyệt Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030.</p>
+        </div>
+      </section>
+
+      <section id="muctieu" class="card" style="margin-top:15px">
+        <h2>I. Mục đích, yêu cầu</h2>
+        <ul>
+          <li>Triển khai hiệu quả Chương trình hành động quốc gia; bảo đảm các sự kiện hộ tịch được đăng ký kịp thời, đầy đủ, chính xác, đúng quy định pháp luật.</li>
+          <li>Nâng cao tỷ lệ đăng ký hộ tịch, tập trung vào đăng ký khai sinh và khai tử đúng hạn; bảo đảm quyền đăng ký hộ tịch của nhóm yếu thế, vùng sâu, vùng xa.</li>
+          <li>Hướng đến việc tất cả sự kiện hộ tịch được đăng ký, quản lý trên môi trường điện tử; dữ liệu hộ tịch điện tử đầy đủ, chính xác, thống nhất và cập nhật kịp thời.</li>
+          <li>Thiết lập hồ sơ hộ tịch điện tử cá nhân; đẩy mạnh tuyên truyền về giấy tờ, dữ liệu điện tử, đăng ký trực tuyến, số định danh cá nhân và định danh điện tử quốc gia.</li>
+          <li>Tăng cường quản lý nhà nước và phối hợp đồng bộ giữa các ngành, cơ quan, UBND cấp xã.</li>
+        </ul>
+      </section>
+
+      <section id="giaiphap" class="card" style="margin-top:15px">
+        <h2>III. Giải pháp thực hiện</h2>
+        <div class="grid">
+          <div class="span-6">
+            <h3>1. Lãnh đạo, chỉ đạo và kiểm tra</h3>
+            <p>Tăng cường chỉ đạo; xây dựng kế hoạch hằng năm; thường xuyên kiểm tra, giám sát, đánh giá và tháo gỡ vướng mắc.</p>
+          </div>
+          <div class="span-6">
+            <h3>2. Đào tạo, bồi dưỡng</h3>
+            <p>Nâng cao chuyên môn nghiệp vụ và kỹ năng ứng dụng công nghệ thông tin cho đội ngũ làm công tác hộ tịch.</p>
+          </div>
+          <div class="span-6">
+            <h3>3. Tuyên truyền, phổ biến</h3>
+            <p>Tuyên truyền đa phương tiện về quyền, trách nhiệm và ý nghĩa của đăng ký, thống kê hộ tịch; hướng dẫn sử dụng dịch vụ công trực tuyến.</p>
+          </div>
+          <div class="span-6">
+            <h3>4. Bảo đảm kinh phí</h3>
+            <p>Bố trí ngân sách và huy động tài trợ, viện trợ cùng các nguồn hợp pháp khác để thực hiện kế hoạch.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="nhiemvu" class="card" style="margin-top:15px">
+        <h2>Phụ lục – Danh mục nhiệm vụ</h2>
+        <p class="muted">Tra cứu nhiệm vụ theo từ khóa, số thứ tự hoặc cơ quan. Nội dung dưới đây tóm lược các nhóm nhiệm vụ và các đầu việc được thể hiện trong phụ lục văn bản.</p>
+        <div class="searchrow">
+          <input id="q" placeholder="Tìm: khai sinh, Sở Tư pháp, tuyên truyền..." oninput="filterTasks()">
+          <button type="button" class="btn-clear" onclick="document.getElementById('q').value='';filterTasks()">Xóa tìm kiếm</button>
+        </div>
+        <div id="tasks">
+          <details class="task"><summary>I. Xây dựng kế hoạch, phối hợp liên ngành và kiểm tra (nhiệm vụ 01–04)</summary>
+            <ul>
+              <li>01. Xây dựng kế hoạch triển khai Chương trình hành động quốc gia giai đoạn 2026–2030. Chủ trì: Sở Tư pháp. Thời gian: tháng 02/2026.</li>
+              <li>02. Ký kết Quy chế phối hợp liên ngành về khai thác, sử dụng số liệu thống kê hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li>
+              <li>03. Phối hợp góp ý văn bản quy phạm pháp luật chuyên ngành liên quan đến đăng ký và thống kê hộ tịch. Thời gian: theo yêu cầu của cơ quan cấp trên.</li>
+              <li>04. Kiểm tra liên ngành về công tác đăng ký và thống kê hộ tịch. Thời gian: hằng năm hoặc đột xuất.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>II. Cơ sở vật chất và hiện đại hóa (nhiệm vụ 05–06)</summary>
+            <ul>
+              <li>05. Trang bị máy tính, internet, máy in phục vụ công tác đăng ký hộ tịch; rà soát, nâng cấp thiết bị. Chủ trì: Sở Tài chính, Sở Khoa học và Công nghệ. Thời gian: năm 2026.</li>
+              <li>06. Tăng cường cơ sở vật chất, kỹ thuật và ứng dụng CNTT tại cơ sở y tế để kết nối, chia sẻ thông tin sinh, tử. Chủ trì: Sở Tài chính, Sở Khoa học và Công nghệ. Thời gian: năm 2026.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>III. Nâng cao năng lực đội ngũ (nhiệm vụ 07–09)</summary>
+            <ul>
+              <li>07. Rà soát đội ngũ công chức làm công tác đăng ký, thống kê hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li>
+              <li>08. Bố trí đủ công chức hộ tịch; rà soát, đào tạo, bồi dưỡng nghiệp vụ, kỹ năng bổ trợ và thái độ phục vụ. Chủ trì: UBND cấp xã. Thời gian: năm 2026.</li>
+              <li>09. Góp ý và đề xuất quy trình đăng ký hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>IV. Nâng cao nhận thức và tuyên truyền (nhiệm vụ 10–13)</summary>
+            <ul>
+              <li>10. Xây dựng kế hoạch tuyên truyền có trọng tâm, trọng điểm; biên soạn tài liệu. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li>
+              <li>11. Tổ chức tuyên truyền về quyền, nghĩa vụ đăng ký hộ tịch, dịch vụ công trực tuyến và đăng ký đúng hạn. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li>
+              <li>12. Nâng cao nhận thức của cơ quan, tổ chức qua họp, sinh hoạt và chuyên đề truyền thông; khảo sát, đánh giá. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li>
+              <li>13. Đào tạo ngắn hạn cho nhân viên y tế về giấy chứng sinh, giấy báo tử và dữ liệu sinh, tử. Chủ trì: Sở Y tế. Thời gian: hằng năm.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>V. Thu thập và công bố số liệu (nhiệm vụ 14–15)</summary>
+            <ul>
+              <li>14. Thống kê tỷ lệ đăng ký khai sinh, khai tử hằng năm. Chủ trì: UBND cấp xã. Thời gian: báo cáo định kỳ.</li>
+              <li>15. Công bố công khai số liệu thống kê hộ tịch đầy đủ, chính xác, thống nhất, kịp thời. Thời gian: từ năm 2026.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>VI. Đăng ký khai sinh (nhiệm vụ 16–24)</summary>
+            <ul>
+              <li>16–17. Đến năm 2028: tỷ lệ đăng ký khai sinh đúng hạn đạt 95%; tỷ lệ đăng ký trong vòng 1 năm kể từ ngày sinh đạt 98%.</li>
+              <li>18. Trẻ sinh tại cơ sở y tế được cấp giấy chứng sinh đạt 100%; dữ liệu cập nhật đúng hạn và tạo lập bản điện tử giấy chứng sinh đạt 95% đến năm 2028.</li>
+              <li>19. Tạo lập bản điện tử giấy khai sinh đối với trường hợp đăng ký từ 01/01/2016 đến thời điểm triển khai phần mềm đạt 100% đến năm 2028.</li>
+              <li>20–21. Rà soát, vận động người chưa có giấy khai sinh/dữ liệu khai sinh; bảo đảm ít nhất 80% nhóm dân cư yếu thế được đăng ký khai sinh trong vòng 1 năm kể từ thời điểm thống kê.</li>
+              <li>22–23. Đến năm 2030: tỷ lệ khai sinh đúng hạn đạt 98,5%; đăng ký trong vòng 1 năm kể từ ngày sinh đạt 99%.</li>
+              <li>24. Đến năm 2030, tạo lập bản điện tử giấy khai sinh cho toàn bộ công dân Việt Nam còn sống thuộc nhóm thời gian nêu trong kế hoạch, bảo đảm 100% công dân còn sống có giấy khai sinh hợp lệ.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>VII. Đăng ký khai tử (nhiệm vụ 25–28)</summary>
+            <ul>
+              <li>25–26. Đến năm 2028: tỷ lệ đăng ký khai tử đúng hạn đạt 85%; đăng ký trong vòng 1 năm kể từ ngày chết đạt 90%.</li>
+              <li>27–28. Đến năm 2030: tỷ lệ đăng ký khai tử đúng hạn đạt 90%; đăng ký trong vòng 1 năm kể từ ngày chết đạt 95%.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>VIII. Giấy báo tử và xác định nguyên nhân tử vong (nhiệm vụ 29–34)</summary>
+            <ul>
+              <li>29–31. Đến năm 2028: giấy báo tử điện tử tại cơ sở y tế được tạo lập, cập nhật đúng hạn đạt 80%; ít nhất 75% trường hợp chết tại cơ sở y tế được chứng nhận nguyên nhân tử vong theo tiêu chuẩn quốc tế; ghi nhận nguyên nhân tử vong ngoài cơ sở y tế đạt 80%.</li>
+              <li>32–34. Đến năm 2030: giấy báo tử điện tử đạt 90%; ít nhất 80% trường hợp chết tại cơ sở y tế được chứng nhận nguyên nhân tử vong theo tiêu chuẩn quốc tế; ghi nhận nguyên nhân tử vong ngoài cơ sở y tế đạt 90%.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>IX. Giảm tỷ lệ tảo hôn (nhiệm vụ 35–36)</summary>
+            <ul>
+              <li>35. Đến năm 2028, rà soát, thống kê đầy đủ các trường hợp tảo hôn phát sinh hằng năm trên địa bàn.</li>
+              <li>36. Đến năm 2030, số trường hợp tảo hôn được rà soát, thống kê giảm ít nhất 30% so với giai đoạn 2026–2028.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>X. Cập nhật tình trạng hôn nhân khi ly hôn (nhiệm vụ 37–40)</summary>
+            <ul>
+              <li>37–38. Đến năm 2028, đồng bộ dữ liệu ly hôn từ 01/01/2026; rà soát, đối chiếu và cập nhật dữ liệu ly hôn trước 31/12/2025 đủ điều kiện đồng bộ, đạt 85%.</li>
+              <li>39–40. Đến năm 2030, dữ liệu ly hôn từ 01/01/2026 được đồng bộ theo thời gian thực; rà soát, cập nhật dữ liệu trước 31/12/2025 đủ điều kiện đồng bộ, đạt 95%.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>XI. Thống kê và công bố số liệu (nhiệm vụ 41–42)</summary>
+            <ul>
+              <li>41. Bảo đảm dữ liệu đăng ký hộ tịch được tổng hợp, thống kê, công bố, phổ biến theo chỉ tiêu thống kê và chế độ báo cáo ngành Tư pháp. Thời gian: định kỳ hằng năm.</li>
+              <li>42. Cập nhật số liệu đăng ký hộ tịch theo tiêu chí quản lý, điều hành cơ bản trên Trung tâm điều hành thông minh thành phố. Thời gian: định kỳ hằng năm.</li>
+            </ul>
+          </details>
+          <details class="task"><summary>XII. Tuyên truyền và củng cố niềm tin xã hội (nhiệm vụ 43–52)</summary>
+            <ul>
+              <li>43. Đến năm 2030, ít nhất 90% người trưởng thành biết và hiểu cơ bản quyền, nghĩa vụ đăng ký sự kiện hộ tịch thiết yếu.</li>
+              <li>44. Tăng mức độ nhận thức về hộ tịch điện tử; tỷ lệ người chủ động đăng ký qua dịch vụ công trực tuyến tăng tối thiểu 50% so với năm 2025.</li>
+              <li>45. Đến năm 2028, 100% công chức hộ tịch cơ sở được tập huấn kỹ năng tuyên truyền, tư vấn, hướng dẫn đăng ký hộ tịch điện tử.</li>
+              <li>46. Đến năm 2030, ít nhất 90% cán bộ y tế, công an, bảo hiểm xã hội, thống kê… hiểu và phối hợp hiệu quả.</li>
+              <li>47. Đến năm 2030, phối hợp triển khai ít nhất 03 cuộc tuyên truyền liên ngành và 05 chiến dịch quy mô toàn quốc với cơ quan Trung ương.</li>
+              <li>48–49. Duy trì kế hoạch tuyên truyền; phấn đấu ít nhất 70% người dân tiếp cận thông tin hộ tịch qua truyền thông, cổng dịch vụ công và nền tảng số khác.</li>
+              <li>50–52. Củng cố hình ảnh, niềm tin, đồng thuận xã hội; tăng cường minh bạch, truyền thông cộng đồng và chia sẻ điển hình tiên tiến.</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section id="chitieu" class="card" style="margin-top:15px">
+        <h2>Một số chỉ tiêu định lượng đáng chú ý</h2>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nội dung</th>
+                <th>Đến năm 2028</th>
+                <th>Đến năm 2030</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Đăng ký khai sinh đúng hạn</td><td>95%</td><td>98,5%</td></tr>
+              <tr><td>Đăng ký khai sinh trong vòng 1 năm kể từ ngày sinh</td><td>98%</td><td>99%</td></tr>
+              <tr><td>Đăng ký khai tử đúng hạn</td><td>85%</td><td>90%</td></tr>
+              <tr><td>Đăng ký khai tử trong vòng 1 năm kể từ ngày chết</td><td>90%</td><td>95%</td></tr>
+              <tr><td>Giấy báo tử điện tử tại cơ sở y tế, cập nhật đúng hạn</td><td>80%</td><td>90%</td></tr>
+              <tr><td>Người trưởng thành hiểu cơ bản quyền, nghĩa vụ đăng ký hộ tịch</td><td>—</td><td>Ít nhất 90%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted">Bảng chỉ chọn một số chỉ tiêu tiêu biểu trong phụ lục; xem văn bản gốc để đối chiếu đầy đủ từng nhiệm vụ và điều kiện.</p>
+      </section>
+
+      <section id="tochuc" class="card" style="margin-top:15px">
+        <h2>V. Tổ chức thực hiện</h2>
+        <ul>
+          <li>Các sở, ban, ngành thành phố và UBND cấp xã chủ động triển khai trong phạm vi chức năng, nhiệm vụ được phân công.</li>
+          <li>Sở Tài chính chủ trì, tổng hợp kinh phí thực hiện kế hoạch, trình UBND thành phố phê duyệt.</li>
+          <li>UBND cấp xã tổ chức thực hiện kế hoạch; lồng ghép với chương trình, kế hoạch phát triển kinh tế – xã hội; khảo sát, thống kê tỷ lệ đăng ký khai sinh, khai tử định kỳ hoặc đột xuất theo yêu cầu.</li>
+          <li>Sở Tư pháp tham mưu theo dõi, đôn đốc, kiểm tra; tổng hợp khó khăn, vướng mắc; phối hợp triển khai, sơ kết, tổng kết và báo cáo Chủ tịch UBND thành phố.</li>
+        </ul>
+        <h3>IV. Kinh phí</h3>
+        <p>Kinh phí từ ngân sách nhà nước; tài trợ, viện trợ của tổ chức, cá nhân trong và ngoài nước; và các nguồn hợp pháp khác. Các cơ quan liên quan xây dựng dự toán theo nhiệm vụ được giao.</p>
+      </section>
+
+      <div class="notice" style="margin-top:16px">
+        <b>Khuyến nghị sử dụng:</b> Đây là công cụ tra cứu, tóm lược để thuận tiện theo dõi. Khi thực hiện nhiệm vụ, cần đối chiếu toàn văn Kế hoạch số 59/KH-UBND và các văn bản hướng dẫn có liên quan. Nội dung website không thay thế văn bản chính thức.
+      </div>
+    </main>
+
+    <footer>Website tra cứu nội dung Kế hoạch số 59/KH-UBND ngày 04/02/2026 · UBND thành phố Cần Thơ</footer>
+  </div>
+
+  <script>
+    let splashTimer = null;
+
+    function goToIntro() {
+      if (splashTimer) {
+        clearTimeout(splashTimer);
+        splashTimer = null;
+      }
+      const splash = document.getElementById("splash-screen");
+      const intro = document.getElementById("intro-screen");
+      const mainApp = document.getElementById("main-app");
+
+      splash.classList.add("fade-out");
+      mainApp.classList.remove("active");
+      intro.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    function startMainApp() {
+      const intro = document.getElementById("intro-screen");
+      const mainApp = document.getElementById("main-app");
+
+      intro.classList.remove("active");
+      mainApp.classList.add("active");
+      sessionStorage.setItem("sotay_entered", "1");
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    function showIntroAgain() {
+      const intro = document.getElementById("intro-screen");
+      const mainApp = document.getElementById("main-app");
+
+      mainApp.classList.remove("active");
+      intro.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      // Nếu người dùng vừa bấm quay lại từ trang con (như tai-ve/) trong cùng phiên, vẫn cho phép xem lại hoặc điều hướng mượt
+      if (window.location.hash && document.querySelector(window.location.hash)) {
+        document.getElementById("splash-screen").classList.add("fade-out");
+        document.getElementById("main-app").classList.add("active");
+      } else {
+        splashTimer = setTimeout(goToIntro, 1800);
+      }
+    });
+
+    function filterTasks() {
+      const q = document.getElementById("q").value.toLocaleLowerCase("vi");
+      document.querySelectorAll("#tasks details").forEach(d => {
+        const match = d.innerText.toLocaleLowerCase("vi").includes(q);
+        d.classList.toggle("hide", !match);
+        if (q && match) d.open = true;
+      });
+    }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+          .catch(error => console.error("Lỗi PWA:", error));
+      });
+    }
+  </script>
 </body>
- <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js")
-      .catch(error => console.error("Lỗi PWA:", error));
-  });
-}
-</script>
 </html>
