@@ -1,84 +1,153 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#123b70">
-  <title>Sổ tay điện tử</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6fb;
-      color: #26364a;
-    }
-    header {
-      background: #123b70;
-      color: white;
-      text-align: center;
-      padding: 32px 16px;
-    }
-    header h1 { margin: 0 0 10px; }
-    header p { margin: 0; line-height: 1.6; }
-    main {
-      max-width: 900px;
-      margin: 25px auto;
-      padding: 0 16px;
-    }
-    .card {
-      background: white;
-      padding: 22px;
-      margin-bottom: 16px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px #0000000d;
-    }
-    .card h2 { color: #123b70; margin-top: 0; }
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      background: #123b70;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 24px;
-      color: #667085;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123b70">
+<title>Sổ tay triển khai Kế hoạch 59/KH-UBND | Cần Thơ</title>
+<style>
+:root{--blue:#123b70;--blue2:#1d5595;--bg:#f3f6fb;--ink:#203047;--muted:#66758a;--line:#e2e8f0;--white:#fff;--gold:#d6a84f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(130deg,#0d2c55,#1d5595);color:white;padding:30px 18px 26px}
+.wrap{max-width:1100px;margin:auto;padding:0 18px}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#d9e7f8;font-weight:bold}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.2;margin:9px 0}
+header p{max-width:780px;margin:10px 0 0;color:#e5eef9}
+.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.pill{border:1px solid #ffffff55;border-radius:99px;padding:5px 11px;font-size:13px}
+nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.navinner{max-width:1100px;margin:auto;padding:8px 18px;display:flex;gap:8px;overflow:auto}
+nav a{white-space:nowrap;color:var(--blue);text-decoration:none;font-weight:bold;font-size:14px;padding:8px 11px;border-radius:8px}
+nav a:hover{background:#edf3fa}
+main{max-width:1100px;margin:22px auto;padding:0 18px 50px}
+.notice{background:#fff8e8;border:1px solid #f0d9a6;border-left:5px solid var(--gold);padding:14px 16px;border-radius:10px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}
+.card{background:white;border:1px solid var(--line);border-radius:14px;padding:19px;box-shadow:0 3px 12px #142b4b08}
+.span-12{grid-column:span 12}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+h2{color:var(--blue);font-size:23px;margin:0 0 12px}
+h3{font-size:17px;margin:0 0 7px;color:#183d68}
+p{margin:7px 0}.muted{color:var(--muted)}.stat{font-size:27px;font-weight:bold;color:var(--blue)}
+ul{padding-left:21px;margin:8px 0}li{margin:5px 0}
+.searchrow{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+input,select{font:inherit;border:1px solid #cbd5e1;border-radius:9px;padding:11px 12px;background:white}
+input{flex:1;min-width:220px}
+button{border:0;background:var(--blue);color:white;border-radius:9px;padding:11px 15px;font-weight:bold;cursor:pointer}
+button:hover{background:var(--blue2)}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:9px 0;background:#fff}
+summary{cursor:pointer;font-weight:bold;color:#183d68}
+.tag{display:inline-block;background:#edf3fa;color:#174477;border-radius:6px;padding:2px 7px;font-size:12px;margin:3px 4px 0 0}
+.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px}
+th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#edf3fa;color:#163d6c}
+footer{text-align:center;color:var(--muted);padding:25px 15px;font-size:13px}
+.small{font-size:13px}.hide{display:none}
+@media(max-width:720px){.span-6,.span-4{grid-column:span 12}.card{padding:16px}header{padding-top:24px}}
+@media print{nav,.searchrow,button{display:none!important}body{background:white}.card{box-shadow:none;break-inside:avoid}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>SỔ TAY ĐIỆN TỬ</h1>
-    <p>Công cụ tra cứu và hướng dẫn trực tuyến</p>
-  </header>
-
-  <main>
-    <section class="card">
-      <h2>Giới thiệu</h2>
-      <p>Chào mừng bạn đến với hệ thống sổ tay điện tử.</p>
-      <p>Công cụ hỗ trợ tra cứu thông tin nhanh chóng, thuận tiện trên điện thoại và máy tính.</p>
-    </section>
-
-    <section class="card">
-      <h2>Tra cứu hướng dẫn</h2>
-      <p>Thông tin hướng dẫn sẽ được cập nhật tại đây.</p>
-      <a class="button" href="#">Xem hướng dẫn</a>
-    </section>
-
-    <section class="card">
-      <h2>Biểu mẫu và tài liệu</h2>
-      <p>Nơi tập hợp các tài liệu và biểu mẫu cần thiết.</p>
-      <a class="button" href="#">Xem tài liệu</a>
-    </section>
-  </main>
-
-  <footer>
-    Sổ tay điện tử © 2026
-  </footer>
-</body>
-</html>
+<header>
+<div class="wrap">
+<div class="kicker">Ủy ban nhân dân thành phố Cần Thơ</div>
+<h1>SỔ TAY TRIỂN KHAI KẾ HOẠCH 59/KH-UBND</h1>
+<p>Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ.</p>
+<div class="meta"><span class="pill">Số: 59/KH-UBND</span><span class="pill">Ngày 04/02/2026</span><span class="pill">Giai đoạn 2026–2030</span></div>
+</div>
+</header>
+<nav><div class="navinner">
+<a href="#tongquan">Tổng quan</a><a href="#muctieu">Mục đích</a><a href="#giaiphap">Giải pháp</a><a href="#nhiemvu">Phụ lục nhiệm vụ</a><a href="#chitie u">Chỉ tiêu</a><a href="#tochuc">Tổ chức thực hiện</a>
+</div></nav>
+<main>
+<div class="notice"><b>Lưu ý về căn cứ:</b> Website này được biên soạn từ file <i>59_KH-UBND_694193.docx</i> do người dùng cung cấp. Đây là Kế hoạch số 59/KH-UBND của UBND thành phố Cần Thơ về đăng ký và thống kê hộ tịch, không phải Kế hoạch 59-KH/ĐU về kiểm điểm, xếp loại của Đảng bộ xã Nhu Gia.</div>
+<section id="tongquan" class="grid">
+<div class="card span-4"><div class="muted small">Số nhiệm vụ trong phụ lục</div><div class="stat">52</div><div class="muted small">Đánh số từ 01 đến 52</div></div>
+<div class="card span-4"><div class="muted small">Thời gian thực hiện</div><div class="stat">2026–2030</div><div class="muted small">Theo các mốc ghi tại phụ lục</div></div>
+<div class="card span-4"><div class="muted small">Cơ quan đầu mối tham mưu, theo dõi</div><div class="stat">Sở Tư pháp</div><div class="muted small">Theo nội dung tổ chức thực hiện</div></div>
+<div class="card span-12"><h2>Thông tin văn bản</h2>
+<p><b>Tên văn bản:</b> Kế hoạch triển khai thực hiện Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030 trên địa bàn thành phố Cần Thơ.</p>
+<p><b>Cơ quan ban hành:</b> Ủy ban nhân dân thành phố Cần Thơ.</p>
+<p><b>Căn cứ được nêu:</b> Quyết định số 2836/QĐ-TTg ngày 31/12/2025 của Thủ tướng Chính phủ phê duyệt Chương trình hành động quốc gia của Việt Nam về đăng ký và thống kê hộ tịch giai đoạn 2026–2030.</p>
+</div></section>
+<section id="muctieu" class="card" style="margin-top:15px">
+<h2>I. Mục đích, yêu cầu</h2>
+<ul>
+<li>Triển khai hiệu quả Chương trình hành động quốc gia; bảo đảm các sự kiện hộ tịch được đăng ký kịp thời, đầy đủ, chính xác, đúng quy định pháp luật.</li>
+<li>Nâng cao tỷ lệ đăng ký hộ tịch, tập trung vào đăng ký khai sinh và khai tử đúng hạn; bảo đảm quyền đăng ký hộ tịch của nhóm yếu thế, vùng sâu, vùng xa.</li>
+<li>Hướng đến việc tất cả sự kiện hộ tịch được đăng ký, quản lý trên môi trường điện tử; dữ liệu hộ tịch điện tử đầy đủ, chính xác, thống nhất và cập nhật kịp thời.</li>
+<li>Thiết lập hồ sơ hộ tịch điện tử cá nhân; đẩy mạnh tuyên truyền về giấy tờ, dữ liệu điện tử, đăng ký trực tuyến, số định danh cá nhân và định danh điện tử quốc gia.</li>
+<li>Tăng cường quản lý nhà nước và phối hợp đồng bộ giữa các ngành, cơ quan, UBND cấp xã.</li>
+</ul></section>
+<section id="giaiphap" class="card" style="margin-top:15px">
+<h2>III. Giải pháp thực hiện</h2>
+<div class="grid">
+<div class="span-6"><h3>1. Lãnh đạo, chỉ đạo và kiểm tra</h3><p>Tăng cường chỉ đạo; xây dựng kế hoạch hằng năm; thường xuyên kiểm tra, giám sát, đánh giá và tháo gỡ vướng mắc.</p></div>
+<div class="span-6"><h3>2. Đào tạo, bồi dưỡng</h3><p>Nâng cao chuyên môn nghiệp vụ và kỹ năng ứng dụng công nghệ thông tin cho đội ngũ làm công tác hộ tịch.</p></div>
+<div class="span-6"><h3>3. Tuyên truyền, phổ biến</h3><p>Tuyên truyền đa phương tiện về quyền, trách nhiệm và ý nghĩa của đăng ký, thống kê hộ tịch; hướng dẫn sử dụng dịch vụ công trực tuyến.</p></div>
+<div class="span-6"><h3>4. Bảo đảm kinh phí</h3><p>Bố trí ngân sách và huy động tài trợ, viện trợ cùng các nguồn hợp pháp khác để thực hiện kế hoạch.</p></div>
+</div></section>
+<section id="nhiemvu" class="card" style="margin-top:15px">
+<h2>Phụ lục – Danh mục nhiệm vụ</h2>
+<p class="muted">Tra cứu nhiệm vụ theo từ khóa, số thứ tự hoặc cơ quan. Nội dung dưới đây tóm lược các nhóm nhiệm vụ và các đầu việc được thể hiện trong phụ lục văn bản.</p>
+<div class="searchrow"><input id="q" placeholder="Tìm: khai sinh, Sở Tư pháp, tuyên truyền..." oninput="filterTasks()"><button onclick="document.getElementById('q').value='';filterTasks()">Xóa tìm kiếm</button></div>
+<div id="tasks">
+<details class="task"><summary>I. Xây dựng kế hoạch, phối hợp liên ngành và kiểm tra (nhiệm vụ 01–04)</summary>
+<ul><li>01. Xây dựng kế hoạch triển khai Chương trình hành động quốc gia giai đoạn 2026–2030. Chủ trì: Sở Tư pháp. Thời gian: tháng 02/2026.</li><li>02. Ký kết Quy chế phối hợp liên ngành về khai thác, sử dụng số liệu thống kê hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li><li>03. Phối hợp góp ý văn bản quy phạm pháp luật chuyên ngành liên quan đến đăng ký và thống kê hộ tịch. Thời gian: theo yêu cầu của cơ quan cấp trên.</li><li>04. Kiểm tra liên ngành về công tác đăng ký và thống kê hộ tịch. Thời gian: hằng năm hoặc đột xuất.</li></ul></details>
+<details class="task"><summary>II. Cơ sở vật chất và hiện đại hóa (nhiệm vụ 05–06)</summary>
+<ul><li>05. Trang bị máy tính, internet, máy in phục vụ công tác đăng ký hộ tịch; rà soát, nâng cấp thiết bị. Chủ trì: Sở Tài chính, Sở Khoa học và Công nghệ. Thời gian: năm 2026.</li><li>06. Tăng cường cơ sở vật chất, kỹ thuật và ứng dụng CNTT tại cơ sở y tế để kết nối, chia sẻ thông tin sinh, tử. Chủ trì: Sở Tài chính, Sở Khoa học và Công nghệ. Thời gian: năm 2026.</li></ul></details>
+<details class="task"><summary>III. Nâng cao năng lực đội ngũ (nhiệm vụ 07–09)</summary>
+<ul><li>07. Rà soát đội ngũ công chức làm công tác đăng ký, thống kê hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li><li>08. Bố trí đủ công chức hộ tịch; rà soát, đào tạo, bồi dưỡng nghiệp vụ, kỹ năng bổ trợ và thái độ phục vụ. Chủ trì: UBND cấp xã. Thời gian: năm 2026.</li><li>09. Góp ý và đề xuất quy trình đăng ký hộ tịch. Chủ trì: Sở Tư pháp. Thời gian: quý I/2026.</li></ul></details>
+<details class="task"><summary>IV. Nâng cao nhận thức và tuyên truyền (nhiệm vụ 10–13)</summary>
+<ul><li>10. Xây dựng kế hoạch tuyên truyền có trọng tâm, trọng điểm; biên soạn tài liệu. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li><li>11. Tổ chức tuyên truyền về quyền, nghĩa vụ đăng ký hộ tịch, dịch vụ công trực tuyến và đăng ký đúng hạn. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li><li>12. Nâng cao nhận thức của cơ quan, tổ chức qua họp, sinh hoạt và chuyên đề truyền thông; khảo sát, đánh giá. Chủ trì: Sở Tư pháp. Thời gian: hằng năm.</li><li>13. Đào tạo ngắn hạn cho nhân viên y tế về giấy chứng sinh, giấy báo tử và dữ liệu sinh, tử. Chủ trì: Sở Y tế. Thời gian: hằng năm.</li></ul></details>
+<details class="task"><summary>V. Thu thập và công bố số liệu (nhiệm vụ 14–15)</summary>
+<ul><li>14. Thống kê tỷ lệ đăng ký khai sinh, khai tử hằng năm. Chủ trì: UBND cấp xã. Thời gian: báo cáo định kỳ.</li><li>15. Công bố công khai số liệu thống kê hộ tịch đầy đủ, chính xác, thống nhất, kịp thời. Thời gian: từ năm 2026.</li></ul></details>
+<details class="task"><summary>VI. Đăng ký khai sinh (nhiệm vụ 16–24)</summary>
+<ul><li>16–17. Đến năm 2028: tỷ lệ đăng ký khai sinh đúng hạn đạt 95%; tỷ lệ đăng ký trong vòng 1 năm kể từ ngày sinh đạt 98%.</li><li>18. Trẻ sinh tại cơ sở y tế được cấp giấy chứng sinh đạt 100%; dữ liệu cập nhật đúng hạn và tạo lập bản điện tử giấy chứng sinh đạt 95% đến năm 2028.</li><li>19. Tạo lập bản điện tử giấy khai sinh đối với trường hợp đăng ký từ 01/01/2016 đến thời điểm triển khai phần mềm đạt 100% đến năm 2028.</li><li>20–21. Rà soát, vận động người chưa có giấy khai sinh/dữ liệu khai sinh; bảo đảm ít nhất 80% nhóm dân cư yếu thế được đăng ký khai sinh trong vòng 1 năm kể từ thời điểm thống kê.</li><li>22–23. Đến năm 2030: tỷ lệ khai sinh đúng hạn đạt 98,5%; đăng ký trong vòng 1 năm kể từ ngày sinh đạt 99%.</li><li>24. Đến năm 2030, tạo lập bản điện tử giấy khai sinh cho toàn bộ công dân Việt Nam còn sống thuộc nhóm thời gian nêu trong kế hoạch, bảo đảm 100% công dân còn sống có giấy khai sinh hợp lệ.</li></ul></details>
+<details class="task"><summary>VII. Đăng ký khai tử (nhiệm vụ 25–28)</summary>
+<ul><li>25–26. Đến năm 2028: tỷ lệ đăng ký khai tử đúng hạn đạt 85%; đăng ký trong vòng 1 năm kể từ ngày chết đạt 90%.</li><li>27–28. Đến năm 2030: tỷ lệ đăng ký khai tử đúng hạn đạt 90%; đăng ký trong vòng 1 năm kể từ ngày chết đạt 95%.</li></ul></details>
+<details class="task"><summary>VIII. Giấy báo tử và xác định nguyên nhân tử vong (nhiệm vụ 29–34)</summary>
+<ul><li>29–31. Đến năm 2028: giấy báo tử điện tử tại cơ sở y tế được tạo lập, cập nhật đúng hạn đạt 80%; ít nhất 75% trường hợp chết tại cơ sở y tế được chứng nhận nguyên nhân tử vong theo tiêu chuẩn quốc tế; ghi nhận nguyên nhân tử vong ngoài cơ sở y tế đạt 80%.</li><li>32–34. Đến năm 2030: giấy báo tử điện tử đạt 90%; ít nhất 80% trường hợp chết tại cơ sở y tế được chứng nhận nguyên nhân tử vong theo tiêu chuẩn quốc tế; ghi nhận nguyên nhân tử vong ngoài cơ sở y tế đạt 90%.</li></ul></details>
+<details class="task"><summary>IX. Giảm tỷ lệ tảo hôn (nhiệm vụ 35–36)</summary>
+<ul><li>35. Đến năm 2028, rà soát, thống kê đầy đủ các trường hợp tảo hôn phát sinh hằng năm trên địa bàn.</li><li>36. Đến năm 2030, số trường hợp tảo hôn được rà soát, thống kê giảm ít nhất 30% so với giai đoạn 2026–2028.</li></ul></details>
+<details class="task"><summary>X. Cập nhật tình trạng hôn nhân khi ly hôn (nhiệm vụ 37–40)</summary>
+<ul><li>37–38. Đến năm 2028, đồng bộ dữ liệu ly hôn từ 01/01/2026; rà soát, đối chiếu và cập nhật dữ liệu ly hôn trước 31/12/2025 đủ điều kiện đồng bộ, đạt 85%.</li><li>39–40. Đến năm 2030, dữ liệu ly hôn từ 01/01/2026 được đồng bộ theo thời gian thực; rà soát, cập nhật dữ liệu trước 31/12/2025 đủ điều kiện đồng bộ, đạt 95%.</li></ul></details>
+<details class="task"><summary>XI. Thống kê và công bố số liệu (nhiệm vụ 41–42)</summary>
+<ul><li>41. Bảo đảm dữ liệu đăng ký hộ tịch được tổng hợp, thống kê, công bố, phổ biến theo chỉ tiêu thống kê và chế độ báo cáo ngành Tư pháp. Thời gian: định kỳ hằng năm.</li><li>42. Cập nhật số liệu đăng ký hộ tịch theo tiêu chí quản lý, điều hành cơ bản trên Trung tâm điều hành thông minh thành phố. Thời gian: định kỳ hằng năm.</li></ul></details>
+<details class="task"><summary>XII. Tuyên truyền và củng cố niềm tin xã hội (nhiệm vụ 43–52)</summary>
+<ul><li>43. Đến năm 2030, ít nhất 90% người trưởng thành biết và hiểu cơ bản quyền, nghĩa vụ đăng ký sự kiện hộ tịch thiết yếu.</li><li>44. Tăng mức độ nhận thức về hộ tịch điện tử; tỷ lệ người chủ động đăng ký qua dịch vụ công trực tuyến tăng tối thiểu 50% so với năm 2025.</li><li>45. Đến năm 2028, 100% công chức hộ tịch cơ sở được tập huấn kỹ năng tuyên truyền, tư vấn, hướng dẫn đăng ký hộ tịch điện tử.</li><li>46. Đến năm 2030, ít nhất 90% cán bộ y tế, công an, bảo hiểm xã hội, thống kê… hiểu và phối hợp hiệu quả.</li><li>47. Đến năm 2030, phối hợp triển khai ít nhất 03 cuộc tuyên truyền liên ngành và 05 chiến dịch quy mô toàn quốc với cơ quan Trung ương.</li><li>48–49. Duy trì kế hoạch tuyên truyền; phấn đấu ít nhất 70% người dân tiếp cận thông tin hộ tịch qua truyền thông, cổng dịch vụ công và nền tảng số khác.</li><li>50–52. Củng cố hình ảnh, niềm tin, đồng thuận xã hội; tăng cường minh bạch, truyền thông cộng đồng và chia sẻ điển hình tiên tiến.</li></ul></details>
+</div>
+</section>
+<section id="chitieu" class="card" style="margin-top:15px">
+<h2>Một số chỉ tiêu định lượng đáng chú ý</h2>
+<div class="tablewrap"><table><thead><tr><th>Nội dung</th><th>Đến năm 2028</th><th>Đến năm 2030</th></tr></thead><tbody>
+<tr><td>Đăng ký khai sinh đúng hạn</td><td>95%</td><td>98,5%</td></tr>
+<tr><td>Đăng ký khai sinh trong vòng 1 năm kể từ ngày sinh</td><td>98%</td><td>99%</td></tr>
+<tr><td>Đăng ký khai tử đúng hạn</td><td>85%</td><td>90%</td></tr>
+<tr><td>Đăng ký khai tử trong vòng 1 năm kể từ ngày chết</td><td>90%</td><td>95%</td></tr>
+<tr><td>Giấy báo tử điện tử tại cơ sở y tế, cập nhật đúng hạn</td><td>80%</td><td>90%</td></tr>
+<tr><td>Người trưởng thành hiểu cơ bản quyền, nghĩa vụ đăng ký hộ tịch</td><td>—</td><td>Ít nhất 90%</td></tr>
+</tbody></table></div>
+<p class="small muted">Bảng chỉ chọn một số chỉ tiêu tiêu biểu trong phụ lục; xem văn bản gốc để đối chiếu đầy đủ từng nhiệm vụ và điều kiện.</p>
+</section>
+<section id="tochuc" class="card" style="margin-top:15px">
+<h2>V. Tổ chức thực hiện</h2>
+<ul>
+<li>Các sở, ban, ngành thành phố và UBND cấp xã chủ động triển khai trong phạm vi chức năng, nhiệm vụ được phân công.</li>
+<li>Sở Tài chính chủ trì, tổng hợp kinh phí thực hiện kế hoạch, trình UBND thành phố phê duyệt.</li>
+<li>UBND cấp xã tổ chức thực hiện kế hoạch; lồng ghép với chương trình, kế hoạch phát triển kinh tế – xã hội; khảo sát, thống kê tỷ lệ đăng ký khai sinh, khai tử định kỳ hoặc đột xuất theo yêu cầu.</li>
+<li>Sở Tư pháp tham mưu theo dõi, đôn đốc, kiểm tra; tổng hợp khó khăn, vướng mắc; phối hợp triển khai, sơ kết, tổng kết và báo cáo Chủ tịch UBND thành phố.</li>
+</ul>
+<h3>IV. Kinh phí</h3><p>Kinh phí từ ngân sách nhà nước; tài trợ, viện trợ của tổ chức, cá nhân trong và ngoài nước; và các nguồn hợp pháp khác. Các cơ quan liên quan xây dựng dự toán theo nhiệm vụ được giao.</p>
+</section>
+<div class="notice" style="margin-top:16px"><b>Khuyến nghị sử dụng:</b> Đây là công cụ tra cứu, tóm lược để thuận tiện theo dõi. Khi thực hiện nhiệm vụ, cần đối chiếu toàn văn Kế hoạch số 59/KH-UBND và các văn bản hướng dẫn có liên quan. Nội dung website không thay thế văn bản chính thức.</div>
+</main>
+<footer>Website tra cứu nội dung Kế hoạch số 59/KH-UBND ngày 04/02/2026 · UBND thành phố Cần Thơ</footer>
+<script>
+function filterTasks(){
+ const q=document.getElementById('q').value.toLocaleLowerCase('vi');
+ document.querySelectorAll('#tasks details').forEach(d=>{
+   d.classList.toggle('hide',!d.innerText.toLocaleLowerCase('vi').includes(q));
+   if(q && d.innerText.toLocaleLowerCase('vi').includes(q)) d.open=true;
+ });
+}
+</script>
+</body></html>
